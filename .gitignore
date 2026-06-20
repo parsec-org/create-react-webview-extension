@@ -1,0 +1,26 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+out/
+
+# VSCode extension package
+*.vsix
+
+# IDE
+.vscode-test/
+.idea/
+
+# OS
+.DS_Store
+
+# TypeScript cache
+*.tsbuildinfo
+
+# Vite
+.vite/
+
+# Logs
+*.log
+npm-debug.log*

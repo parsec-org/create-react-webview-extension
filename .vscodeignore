@@ -1,0 +1,26 @@
+.vscode/**
+.vscode-test/**
+src/**
+out/**
+node_modules/**
+.gitignore
+.yarnrc
+.eslintrc*
+eslint.config.*
+vsc-extension-quickstart.md
+**/tsconfig*.json
+**/*.map
+**/*.ts
+**/.vscode-test.*
+
+# Build config
+esbuild.config.mjs
+vite.config.ts
+
+# Webview source (only dist/webview is needed at runtime)
+index.html
+assets/react.svg
+assets/vite.svg
+
+# IDE
+.idea/**
