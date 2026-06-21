@@ -16,7 +16,7 @@ export function NetworkStatusIndicator({ className }: { className?: string }) {
       )}
     >
       {isOnline ? <Wifi className="size-3.5" /> : <WifiOff className="size-3.5" />}
-      <span>{isOnline ? '在线' : '离线'}</span>
+      <span>{isOnline ? 'Online' : 'Offline'}</span>
     </div>
   );
 }

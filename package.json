@@ -1,20 +1,19 @@
 {
-  "name": "parsec-react-webview",
-  "displayName": "Parsec React Webview",
-  "description": "",
+  "name": "react-webview-extension",
+  "displayName": "React Webview Extension",
+  "description": "A VS Code extension template with React webview, RPC communication, and Tailwind CSS",
   "version": "0.0.1",
-  "publisher": "Yanghc",
+  "publisher": "your-publisher",
   "icon": "assets/vite.png",
   "type": "module",
   "engines": {
     "vscode": "^1.105.0"
   },
   "categories": [
-    "Chat",
-    "AI"
+    "Other"
   ],
   "activationEvents": [
-    "onView:parsecChatView"
+    "onView:reactWebviewView"
   ],
   "license": "MIT",
   "main": "./dist/extension.js",
@@ -22,25 +21,25 @@
     "viewsContainers": {
       "activitybar": [
         {
-          "id": "parsec-chat",
-          "title": "Parsec Chat",
+          "id": "react-webview",
+          "title": "React Webview",
           "icon": "assets/icon.svg"
         }
       ]
     },
     "views": {
-      "parsec-chat": [
+      "react-webview": [
         {
           "type": "webview",
-          "id": "parsecChatView",
-          "name": "Chat",
+          "id": "reactWebviewView",
+          "name": "Webview",
           "icon": "assets/icon.svg"
         }
       ]
     },
     "commands": [
       {
-        "command": "parsec-react-webview.helloWorld",
+        "command": "react-webview.helloWorld",
         "title": "Hello World"
       }
     ]
@@ -58,6 +57,8 @@
     "format": "prettier --write \"src/**/*.{ts,tsx,css,json}\"",
     "format:check": "prettier --check \"src/**/*.{ts,tsx,css,json}\"",
     "test": "vscode-test",
+    "test:webview": "vitest run",
+    "test:webview:watch": "vitest",
     "prepare": "husky"
   },
   "lint-staged": {
@@ -74,10 +75,15 @@
     "url": "https://github.com/QiyuanChen02/react-webview.git"
   },
   "devDependencies": {
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.3.0",
+    "@commitlint/cli": "^19.8.1",
+    "@commitlint/config-conventional": "^19.8.1",
     "@types/mocha": "^10.0.10",
     "@types/node": "22.x",
     "@types/react": "^19.2.2",
     "@types/react-dom": "^19.2.2",
+    "@types/semver": "^7.7.1",
     "@types/vscode": "^1.105.0",
     "@typescript-eslint/eslint-plugin": "^8.42.0",
     "@typescript-eslint/parser": "^8.42.0",
@@ -96,7 +102,8 @@
     "react-icons": "^5.6.0",
     "tailwindcss": "^4.3.1",
     "typescript": "^5.9.2",
-    "vite": "^7.2.2"
+    "vite": "^7.2.2",
+    "vitest": "^3.2.1"
   },
   "dependencies": {
     "@fontsource-variable/figtree": "^5.2.10",
@@ -122,6 +129,7 @@
     "radix-ui": "^1.6.0",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
+    "semver": "^7.8.5",
     "shadcn": "^4.11.0",
     "sonner": "^2.0.7",
     "tailwind-merge": "^3.6.0",
