@@ -4,10 +4,10 @@ import { wrpc } from './wrpc';
 import viteLogo from '../../assets/vite.svg';
 import { Button } from '@/webview/components/ui/button.tsx';
 import { ModeToggle } from '@/webview/components/ModeToggle.tsx';
+import { NetworkStatusIndicator } from '@/webview/components/NetworkStatusIndicator';
 import { Tooltip, TooltipContent, TooltipTrigger } from '@/webview/components/ui/tooltip.tsx';
 import { ArrowUpIcon } from 'lucide-react';
 import { Separator } from '@/webview/components/ui/separator.tsx';
-import { Fragment } from 'react';
 import { toast } from '@/webview/components/ui/sonner.tsx';
 
 function App() {
@@ -29,10 +29,13 @@ function App() {
   };
 
   return (
-    <Fragment>
-      <ModeToggle />
+    <div className="relative w-full">
+      <div className="flex items-center justify-between mb-4">
+        <NetworkStatusIndicator />
+        <ModeToggle />
+      </div>
       <div className="flex flex-col items-center justify-center w-full gap-4">
-        <div className="relative flex flex-row items-center justify-center bg-primary-foreground">
+        <div className="relative w-full flex flex-row items-center justify-center bg-primary-foreground">
           <a href="https://vite.dev" target="_blank">
             <img src={viteLogo} className="logo" alt="Vite logo" />
           </a>
@@ -90,7 +93,7 @@ function App() {
           ))}
         </div>
       </div>
-    </Fragment>
+    </div>
   );
 }
 
