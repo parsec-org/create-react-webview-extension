@@ -1,6 +1,6 @@
 # VS Code Extension Quick Start
 
-English | [中文](./vsc-extension-quickstart_CN.md)
+English | [中文](./vsc-extension-quickstart_zh_CN.md)
 
 ## What's in the folder
 

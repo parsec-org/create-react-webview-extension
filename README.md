@@ -2,7 +2,7 @@
 
 A modern VSCode extension template for building React-powered webviews with Vite, Tailwind CSS, and shadcn/ui.
 
-English | [中文](./README_CN.md)
+English | [中文](./README_zh_CN.md)
 
 ## Features
 
