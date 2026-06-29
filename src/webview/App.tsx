@@ -2,15 +2,17 @@ import './App.css';
 import reactLogo from '../../assets/react.svg';
 import { wrpc } from './wrpc';
 import viteLogo from '../../assets/vite.svg';
+import { useNavigate } from 'react-router-dom';
 import { Button } from '@/webview/components/ui/button.tsx';
 import { ModeToggle } from '@/webview/components/ModeToggle.tsx';
 import { NetworkStatusIndicator } from '@/webview/components/NetworkStatusIndicator';
 import { Tooltip, TooltipContent, TooltipTrigger } from '@/webview/components/ui/tooltip.tsx';
-import { ArrowUpIcon } from 'lucide-react';
+import { ArrowUpIcon, MessageCircleIcon } from 'lucide-react';
 import { Separator } from '@/webview/components/ui/separator.tsx';
 import { toast } from '@/webview/components/ui/sonner.tsx';
 
 function App() {
+  const navigate = useNavigate();
   const { data: count } = wrpc.useQuery('fetchCounter');
   const { data: workspaceName } = wrpc.useQuery('getWorkspaceName');
   const updateCount = wrpc.useMutation('incrementCounter');
@@ -30,7 +32,7 @@ function App() {
 
   return (
     <div className="relative w-full">
-      <div className="flex items-center justify-between mb-4">
+      <div className="flex items-center justify-between mb-4 mx-4">
         <NetworkStatusIndicator />
         <ModeToggle />
       </div>
@@ -61,6 +63,10 @@ function App() {
           </Button>
         </div>
         <Button onClick={handleSendMessage}>Send Message to VSCode</Button>
+        <Button variant="secondary" onClick={() => navigate('/chat')}>
+          <MessageCircleIcon className="mr-2 h-4 w-4" />
+          Open Chat
+        </Button>
         <div className="flex items-center gap-2 text-sm md:gap-4">
           <div className="flex flex-col gap-1">
             <span className="font-medium">Settings</span>
